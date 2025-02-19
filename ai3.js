@@ -1,4 +1,4 @@
-const API_KEY = "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"; // Replace with your actual API key securely
+const API_KEY = ""; // Replace with your actual API key securely
 const API_URL = "https://api.groq.com/openai/v1/chat/completions";
 
 const chatDisplay = document.getElementById("chat-display");
