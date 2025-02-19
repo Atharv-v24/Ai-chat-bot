@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Interface</title>
+    <style>
+        :root {
+            --background: #1e2327;
+            --text-primary: #ffffff;
+            --text-secondary: #a8a8a8;
+            --blue-gradient: #8ab4f8;
+            --pink-gradient: #f28b82;
+            --nav-background: #2d3339;
+            --notification-bg: rgba(255, 255, 255, 0.1);
+            --input-background: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        body {
+            background-color: var(--background);
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .navbar {
+            background-color: var(--nav-background);
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .menu-icon {
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .notification {
+            background-color: var(--notification-bg);
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .notification-close {
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .chat-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .welcome-text {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .welcome-name {
+            background: linear-gradient(90deg, var(--blue-gradient), var(--pink-gradient));
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 1.5rem;
+        }
+
+        .chat-input-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1rem;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .chat-input {
+            flex: 1;
+            background-color: var(--input-background);
+            border: none;
+            border-radius: 8px;
+            padding: 1rem;
+            color: var(--text-primary);
+            font-size: 1rem;
+        }
+
+        .chat-input:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px var(--blue-gradient);
+        }
+
+        .send-button {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            padding: 0 1rem;
+            font-size: 1rem;
+        }
+
+        .send-button:hover {
+            color: var(--text-primary);
+        }
+    </style>
+</head>
+<body>
+    <link rel="stylesheet" href="ai2.css">
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <span class="menu-icon">☰</span>
+            <span>Gemini Advanced</span>
+        </div>
+        <div>🔔</div>
+    </nav>
+
+    <div class="notification">
+        <span>Gemini was just updated. See update</span>
+        <span class="notification-close">×</span>
+    </div>
+
+    <main class="chat-container">
+        <h1 class="welcome-text">
+            Hello, <span class="welcome-name">Atharv.</span>
+        </h1>
+        <p class="subtitle">How can I help you today?</p>
+    </main>
+    <div id="chat-display" ></div>
+    <input type="text" id="user-input" placeholder="Enter a prompt here...">
+    <button id="send-button">Send</button>
+
+
+<!--    <div class="chat-input-container">
+        <input type="text" class="chat-input" placeholder="Enter a prompt here">
+        <button class="send-button">Send</button>
+    </div> -->
+    <script src="ai3.js"></script>
+
+</body>
+</html>
